@@ -1,0 +1,257 @@
+<!-- This file needs to be edited by the lab developer to suit the requirements of their lab in particular.-->
+<!-- Add class="default" to include any element as it is specified in default.html. Do not include class="default" to the elements that you want to edit -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test</title>
+        <script type="text/javascript" src="a6.js"></script>
+    </head>
+
+    <body>
+        <div id="experiment">
+            <!-- The Experiment Document Container-->http://nptel.ac.in/courses/108105055/10
+            <!-- The lab Header contains the logo and the name of the lab, usually displayed on the top of the page-->
+
+            <header class="default" id="experiment-header">
+                <div class="logo" id="experiment-header-logo">
+                    <!-- Enclose the logo image of your lab or write it in text-->
+                    <img src="../images/logo.jpg"></div>
+
+                <div class="heading" id="experiment-header-heading">
+                    <!-- Write the name of your lab and link it to the home 
+          page of your lab (h1 tag is preferred while writing your 
+          lab name)-->
+                    <a href="../index.html">Dsp lab</a>
+                </div><!-- Add any additional element you want to add to the lab 
+        header, For example : Help (Enclosing them with suitable 
+        div is recommended)-->
+            </header><!-- The lab article is the main content area where all the experiment content sits-->
+
+            <article id="experiment-article">
+                <!-- The lab article has an header, optional navigational 
+        menu, number of sections, an optional sidebar and a closing 
+        footer-->
+
+                <div class="breadcrumb" id="experiment-article-breadcrumb"></div>
+
+                <header class="heading" id="experiment-article-heading">
+                    Study of Discrete Fourier Transform (DFT) and its inverse
+                </header><!-- Navigation menu is useful to organize the view of multiple sections inside the article-->
+
+                <nav class="default" id="experiment-article-navigation">
+                    <ul id="experiment-article-navigation-menu">
+                        <!-- The menu can be dynamically generated to contain 
+              the headings of your sections or instead write the 
+              menu items of your choice individually enclosedu in 
+              &lt;li&gt; tag as shown below-->
+                    </ul>
+                </nav><!-- All the sections of your lab or experiment can be 
+          enclosed together with a div element as shown below-->
+
+                <div id="experiment-article-sections">
+                    <!------------------------------- First section of the article---------------------------------->
+
+                    <section id="experiment-article-section-1">
+                        <div class="icon" id="experiment-article-section-1-icon">
+                            <!-- Enclose the icon image of your lab -->
+                            <img src="../images/introduction.jpg"></div>
+                        <!-- The heading for the section can be enclosed in a div tag. -->
+
+                        <div class="heading" id="experiment-article-section-1-heading">
+                            Introduction
+                        </div><!-- Write the section content inside a paragraph element, You can also include images with &lt;img&gt; tag -->
+
+                        <div class="content" id="experiment-article-section-1-content">                            
+                            <p>This experiment enables a student to learn
+                <ul>
+                    <li>Understand what is DFT and inverse DFT.</li>
+                    <li>Visualize the amplitude and phase spectrum of the signal in frequency domain.</li>
+                    
+                </ul>
+            
+                
+                </p>                            
+                        </div>
+                    </section>
+                    <!-------------------------- Second section of the article---------------------------------------->
+
+                    <section id="experiment-article-section-2">
+                        <div class="icon" id="experiment-article-section-2-icon">
+                            <!-- Enclose the icon image of your lab. -->
+                            <img src="../images/theory.jpg"></div>
+                        <!-- The heading for the section can be enclosed in a div tag. -->
+
+                        <div class="heading" id="experiment-article-section-2-heading">
+                            Theory
+                        </div><!-- Write the section content inside a paragraph element, we can also include images with &lt;img&gt; tag -->
+
+                        <div class="content" id="experiment-article-section-2-content">                            
+                            <p class="heading-content">The discrete-time Fourier transform (DTFT) of a sequence is a continuous function of &omega;, and 
+                                repeats with period 2&pi; 
+                                In practice we usually want to obtain the Fourier components using digital computation, and can only evaluate them for
+                                a discrete set of frequencies. The discrete Fourier transform (DFT) provides a means for achieving this .</p>
+                            <p class="heading-content"> The DFT is itself a sequence, and it corresponds roughly to samples, equally spaced in frequency,
+                                of the Fourier 
+                                transform of the signal. The discrete Fourier transform of a length N signal x[n], n = 0, 1... N - 1 is given
+                                by
+                            <p style="text-align:center">`x[k]=sum_(n=0)^(n-1)x[n]e^(-j(2pi/N)kn)`</p>
+                            <p class="heading-content">This is the analysis equation. The corresponding inverse equation is </p>
+                            <p><p style="text-align:center">`x[n]=1/N sum_(n=0)^(n-1)x[k]e^(j(2pi/N)kn)`</p>
+                            <p>With this notation the DFT analysis-inverse pair becomes</p>
+                            <p><p style="text-align:center">`W_N=e^(-j(2pi/N))`</p>
+                            <p>With this notation the DFT analysis-inverse pair becomes</p>
+                             <p><p style="text-align:center">`x[k]=sum_(n=0)^(n-1)x[n]w_n^(kn)`</p>
+                             <p><p style="text-align:center">`x[n]=1/N sum_(n=0)^(n-1)x[k]w_n^-(kn)`</p>
+                            <p class="heading-content">An important property of the DFT is that it is cyclic, with period N, both in the discrete-time 
+                                and discrete-frequency
+                                domains. For example, for any integer r</p><p><p style="text-align:center">`X[K+rN]=sum_(n=0)^(n-1)x[n]w_N^(K+rN).n=sum_(n=0)^(n-1)W_N^(Kn)(W_N^N)^(rn)`</p>
+                            <p><p style="text-align:center">`=sum_(n=0)^(n-1)x[n]W_N^(Kn)=X[K],`</p>
+                            <p class="heading-content" >since <p style="text-align:center">`W N^N=e^(-j(2pi/N)N)=e^(-j2pi)=1`</p>. Similarly, it is easy to show that x[n + rN] = x[n], implying periodicity 
+                                of the inverse equation. This is important - even though the DFT only depends on samples in the 
+                                interval 0 to N - 1, it is implicitly assumed that the signals repeat with period N in both the time and
+                                frequency domains.</p>
+                            <p style="text-align:">To this end, it is sometimes useful to define the periodic extension of the signal X[n] to be 
+                            <p><p style="text-align:center">`x[n]=x[n mod N]=x[((n))N]`</p>
+                            <p style="text-align:">Here n mod N and((n))N are taken to mean n modulo N, which has the value of the remainder 
+                                after n is divided by N.Alternatively, if n is written in the form n = kN + l for 0 &leq; l &leq; N, then</p>
+                            <p>n mod N = ((n))N = l </p><center><img src="../images/exp6/pic-1.png" style="height:50%;width:50%;" align="center" /></center>
+                            <p style="text-align:">Similarly, the periodic extension of X[k] is defined to be</p><p><p style="text-align:center">`X[k]=X[k mod N]=X[((K))n]`</p>
+                            <p style="text-align:">It is sometimes better to reason in terms of these periodic extensions when dealing with the DFT. 
+                                Specifically, if X[k] is the DFT of x[n], then the inverse DFT of X[k] is [n]. The signals x[n] and [n] are identical 
+                                over the interval 0 to N-1,but may differ outside of this range. Similar statements can be made regarding the 
+                                transform X[k].</p>
+                        </div>
+                    </section>
+                    <!-------------------------- Third section of the article---------------------------------------->
+
+                    <section id="experiment-article-section-3">
+                        <div class="icon" id="experiment-article-section-3-icon">
+                            <!-- Enclose the icon image of your lab. -->
+                            <img src="../images/objective.jpg"></div>
+
+                        <div class="heading" id="experiment-article-section-3-heading">
+                            procedure
+                        </div>
+
+                        <div ALIGN="justify" class="content" id="experiment-article-section-3-content">                            
+                            <p> 1.Click on the simulator tab <b><u><font size="5">SIMULATOR</font></u></b>It will open the workspace.</p>
+                            <p>2.See the movie in experiment page by pressing  help button <b><u><font size="5">?</font></u></b> to understand how the
+                                following steps are to be executed.</p>
+                            <p>3.Workspace provides three user controls to visualize the DFT and inverse DFT: signal selector, a slider to set the 
+                                input signal no. of samples and another slider to set the DFT no. of points.</p><br />
+                            <center><img style="width:214px;height:103px;" src="../images/exp6/fig-1.png" alt="" /><br/>
+                                Fig-1 </center>
+                            <p>4.Select rectangular signal first and set the no. of samples in input signal to 8 also DFT points to 8. The input 
+                                signal plot will be be shown in Graph 1.</p>
+                            <p>5.Now observe the magnitude and spectrum of the signal after applying DFT in Graph no. 2 and 3. Simultaneously in
+                                Graph 4 will show the signal after inverse DFT.</p>
+                            <center><img style="width:576px;height:459px;" src="../images/exp6/fig-2.png" alt="" /><br/>
+                                 Fig-2 </center>
+                            <p>6.Note down the values of No. of samples in input signal, DFT points and first 10 to 15 values of Graph 1, 2, 3 and 4 
+                                which will give you table no. 1 of report generations</p>
+                            <p>7.Now repeat step 4 to 6 for other two types of input signals and take the reading which will give you table 2 and 3.</p>
+                            <p>8.Then set value of no. of DFT points to 16 and choose ramp signal as input, see the changes in the magnitude and 
+                                phase spectrum of the signal</p>
+                           <center><img style="width:599px;height:395px;" src="../images/exp6/fig-3.png" alt="" /><br/>
+                                 Fig-3 </center>
+                            <p>9.Take the reading which will give you table 4 and observe the graphs and make a discussion on it in report generation.</p>
+                            <p>10.Now set the value of DFT points to 4. See the changes in graph. And take the reading will give you table no. 5. 
+                                Again do some discussions on graph you obtained in report generation.</p>
+                            <p>11.For every set of readings take a screenshot of the simulation stage, using the button provided on the simulation 
+                                stage at right upper most corner<img style="width:90px;height:23px;" src="../images/exp6/fig-4.png" alt="" />
+                                and upload each image with the table data in report generation.</p>
+                            <p>12.Complete the Observation and discuss the results in report generation.</p>
+                            <p>13.Then click Yes I have finished my Experiment button to submit your report..</p>
+                        </div>
+                        
+                    </section>
+                    <!-------------------------- Fourth section of the article---------------------------------------->
+
+                    <section id="experiment-article-section-4">
+                        <div class="icon" id="experiment-article-section-4-icon">
+                            <!-- Enclose the icon image of your lab.-->
+                            <img src="../images/simulation.jpg"></div>
+
+                        <div class="heading" id="experiment-article-section-4-heading">
+                            simulator
+                        </div>
+
+                        <div class="content" id="experiment-article-section-4-content">                            
+                            <div align="left">
+                        
+                            	
+                            <img src="../images/img/help.jpg" align="right" style="cursor:pointer;width:30px;height:30px" title="Help"onclick="window.open('help1.html','helpWindow','width=760,height=700,screenX=300,screenY=120')" />                
+                                        
+                        </div>
+                        
+                    	<div align="center" id="part1Div">
+                        
+                            
+                            <div align="center">
+                            
+                              <object width="800" height="820">
+                                  <param name="movie" value="expt.swf">
+                                  <embed src="expt.swf" width="800" height="820">
+                                  </embed>
+                              </object>
+                              
+                            </div>  
+                        
+                        </div>
+                        
+                                     
+                        </div>
+                    </section>
+                    <!-------------------------- Fifth section of the article---------------------------------------->
+
+                   
+
+                    <!-------------------------- Sixth section of the article---------------------------------------->
+
+                    
+                    <!-------------------------- Seventh section of the article---------------------------------------->
+
+                    <section id="experiment-article-section-7">
+                        <div class="icon" id="experiment-article-section-7-icon">
+                            <!-- Enclose the icon image of your lab.-->
+                            <img src="../images/quizzes.jpg"></div>
+
+                        <div class="heading" id="experiment-article-section-7-heading">
+                            Quizzes
+                        </div>
+
+                        <div class="content" id="experiment-article-section-7-content">                            
+                            <p>Quizzes content.....</p>                           
+                        </div>
+                    </section>
+                    <!-------------------------- Eight section of the article---------------------------------------->
+
+                    <section id="experiment-article-section-8">
+                        <div class="icon" id="experiment-article-section-8-icon">
+                            <!-- Enclose the icon image of your lab.-->
+                            <img src="../images/reference.jpg"></div>
+
+                        <div class="heading" id="experiment-article-section-8-heading">
+                            Reference
+                        </div>
+
+                        <div class="content" id="experiment-article-section-8-content">                            
+                            <p style="text-align:left; font-size:18px; font-weight:bold; padding-bottom: 10px;">Books:</p>                          
+                            <ul style="text-align:left; padding-bottom: 10px;"><li>Discrete-Time Signal Processing, A. V. Oppenheim and R. W. Schafer, Englewood Cliffs, NJ: Prentice Hall, 1989</li>
+                            <li>C. E. Shannon, "Communication in the presence of noise," Proc. Institute of Radio Engineers, vol. 37, no. 1, pp. 10-21, Jan 1949.</li>
+                            <li>H. Nyquist, "Certain topics in telegraph transmission theory," Trans. AIEE, vol. 47, pp. 617-644, Apr 1928.</li></ul>
+
+<p style="text-align:left; font-size:18px; font-weight:bold; padding-bottom: 10px;">Video Lectures:</p>
+<ul style="text-align:left; padding-bottom: 10px;">
+                                <li><a href="http://nptel.ac.in/courses/117102060/9" target="_blank">Discrete Fourier Transform (DFT)</a></li>
+
+<li><a href="http://nptel.ac.in/courses/108105055/10" target="_blank">Discrete Fourier Transform (DFT)</a></li>
+                            </ul>
+                        </div>
+                    </section>                   
+
+                </div>
+            </article>
+        </div>
+    </body>
+</html>
