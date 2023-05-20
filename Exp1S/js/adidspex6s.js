@@ -9,12 +9,15 @@ Updated on: 06-05-2022
 */
 var b1 = document.getElementById('b1'),
     b2 = document.getElementById('b2'),
-    b3 = document.getElementById('b3');
+    b3 = document.getElementById('b3'),
+    b4 = document.getElementById('b4');
 b12 = new LeaderLine(b1, b2,
       {startPlug: 'disc',endPlug: 'arrow3', middleLabel: LeaderLine.pathLabel('x(t)', {fontFamily: 'Arial, sans-serif'})});
 b13 = new LeaderLine(b1, LeaderLine.pointAnchor(b3, {x: '0%', y: '20%'}),
       {startPlug: 'disc',endPlug: 'arrow3', middleLabel: LeaderLine.pathLabel('x(t)', {fontFamily: 'Arial, sans-serif'}), endLabel: LeaderLine.pathLabel('Ch1', {fontFamily: 'Arial, sans-serif'})});
-b23 = new LeaderLine(b2, LeaderLine.pointAnchor(b3, {x: '0%', y: '80%'}),
+b24 = new LeaderLine(b2, LeaderLine.pointAnchor(b4, {x: '0%', y: '80%'}),
+      {startPlug: 'disc',endPlug: 'arrow3', middleLabel: LeaderLine.pathLabel('y(n)', {fontFamily: 'Arial, sans-serif'}),endLabel: LeaderLine.pathLabel('Ch2', {fontFamily: 'Arial, sans-serif'})});
+b43 = new LeaderLine(b4, LeaderLine.pointAnchor(b3, {x: '0%', y: '80%'}),
       {startPlug: 'disc',endPlug: 'arrow3', middleLabel: LeaderLine.pathLabel('y(n)', {fontFamily: 'Arial, sans-serif'}),endLabel: LeaderLine.pathLabel('Ch2', {fontFamily: 'Arial, sans-serif'})});
 
   new PlainDraggable(b1,{
@@ -43,7 +46,7 @@ b23 = new LeaderLine(b2, LeaderLine.pointAnchor(b3, {x: '0%', y: '80%'}),
     $("#pa").slideUp(),
     ckt=0,
     plt(0),
-    b12.position(),b23.position(); }
+    b12.position(),b24.position(); }
     });
 
   new PlainDraggable(b3, {
@@ -58,8 +61,22 @@ b23 = new LeaderLine(b2, LeaderLine.pointAnchor(b3, {x: '0%', y: '80%'}),
     $("#pa").slideUp(),
     ckt=0,
     plt(0),
-    b13.position(),b23.position(); }
+    b13.position(),b43.position(); }
     });
+    new PlainDraggable(b4, {
+      onMove: function() { $("#s1").prop("checked",false),
+      $("#sn").text("Circuit OFF"),
+      $("#sn").css("background","red"),
+      b12.dash = false,
+      b13.dash = false,
+      b23.dash = false,
+      $("#grp").slideUp(),
+      $("#ctl").slideUp(),
+      $("#pa").slideUp(),
+      ckt=0,
+      plt(0),
+      b24.position(),b43.position(); }
+      });
 
 
   var ckt=0;
@@ -312,7 +329,8 @@ $(document).ready(function(){
       $("#pa").slideDown("slow");
         b12.dash = {animation: true};
         b13.dash = {animation: true};
-        b23.dash = {animation: true};
+        b24.dash = {animation: true};
+        b43.dash = {animation: true};
       ckt=1;
       plt(ch);
     }
@@ -324,10 +342,12 @@ $(document).ready(function(){
       $("#pa").slideUp();
         b12.dash = {animation: false};
         b13.dash = {animation: false};
-        b23.dash = {animation: false};
+        b24.dash = {animation: false};
+        b43.dash = {animation: false};
         b12.dash = false;
         b13.dash = false;
-        b23.dash = false;
+        b24.dash = false;
+        b43.dash = false;
       ckt=0;
       plt(0);
     }

@@ -285,6 +285,11 @@ button {
     left: 75%;
 }
 
+#b4 {
+    position: relative;
+    left: 75%;
+}
+
 .pic1 {
     width: 75%;
     height: auto;
