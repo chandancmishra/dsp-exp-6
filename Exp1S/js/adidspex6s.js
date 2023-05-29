@@ -248,7 +248,7 @@ b43 = new LeaderLine(b4, LeaderLine.pointAnchor(b3, {x: '0%', y: '80%'}),
                         color: '#7f7f7f'
                       },
                       xaxis: {
-                        title:'Time (s)',
+                        title:'Frequency (Khz)',
                         showticklabels: false,
                         autotick: true},
                         yaxis: {
